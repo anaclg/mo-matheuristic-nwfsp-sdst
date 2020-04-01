@@ -174,5 +174,11 @@ table.MATHEURISTIC$TT_MAX <- data.matheuristic.objectives$TT_MAX
 table.MATHEURISTIC$PI_TEC_MAX <- round((1 - (data.matheuristic.objectives$TEC_MIN/data.matheuristic.realObjectives$TEC_REAL))*100,1)
 table.MATHEURISTIC$PI_TT_MAX <- round((1 - (data.matheuristic.objectives$TT_MIN/data.matheuristic.realObjectives$TT_REAL))*100,1)
 
+# Boxplot for PI_TEC_MAX
+boxplot(table.MATHEURISTIC$PI_TEC_MAX,
+        xlab="PI_TEC_MAX", ylab="%")
 
+# Boxplot for PI_TT_MAX
+boxplot(table.MATHEURISTIC$PI_TT_MAX,
+        xlab="PI_TT_MAX", ylab="%")
 
