@@ -1,6 +1,6 @@
 # Computational Experiments - Instances Inputs
 
-The input data of the 24 instances used in the computational experiments of manuscript "Multi-objective matheuristic for minimization of total tardiness and energy costs in a steel industry heat treatment line" are present in folder [data-xlsx](data-xlsx).
+The input data of the 24 instances used in the computational experiments of manuscript "Multi-objective matheuristic for minimization of total tardiness and energy costs in a steel industry heat treatment line" (under submission) are present in folder [data-xlsx](data-xlsx).
 
 ## How is the input data organized
 

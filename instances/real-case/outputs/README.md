@@ -1,6 +1,6 @@
 # Computational Experiments - Instances Outputs
 
-The outputs from the computational experiments described in the manuscript "Multi-objective matheuristic for minimization of total tardiness and energy costs in a steel industry heat treatment line" are present in the folder [data-csv](data-csv).
+The outputs from the computational experiments described in the manuscript "Multi-objective matheuristic for minimization of total tardiness and energy costs in a steel industry heat treatment line" (under submission) are present in the folder [data-csv](data-csv).
 
 ## Details of the computational experiments
 
