@@ -6,6 +6,8 @@ This repository contains the dataset used in the evaluation of the multi-objecti
 
 The optimization parameters of the test instances and its usage instructions can be found [here](instances/real-case/inputs). The raw ouput data of the computational experiments is also shared [here](instances/real-case/outputs) with the R script (R version 3.6.3) used to generate the manuscript result tables, figures, and statistical analysis. 
 
+You can also access the manuscript [support information file](docs/support_information_file.pdf) in this repository.
+
 ## License
 
 The content of this project is licensed under the Creative Commons Attribution Share Alike 4.0 International license.
