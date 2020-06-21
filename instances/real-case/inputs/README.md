@@ -4,10 +4,10 @@ The input data of the 24 instances used in the computational experiments of manu
 
 ## How is the input data organized
 
-For each instance, there is a file that contains the optimization parameters in [JSON]((https://www.json.org/json-en.html) format. The parameters are shown in the table below.
+For each instance, there is a file that contains the optimization parameters in [JSON](https://www.json.org/json-en.html) format. The parameters are shown in the table below.
 
 | Parameter | Description | JSON variable name |
-|-|-|
+|-|-|-|
 | p_i | total process time of job i throughout all machines [h] | ProcessTimeTotal |
 | p´_i | process time to enter all pieces of job i in the first machine [h] | ProcessTimeByJob |
 | p´_ik | process time of a piece of job i in machine k [h] | ProcessTimeByJobAndMachine |
