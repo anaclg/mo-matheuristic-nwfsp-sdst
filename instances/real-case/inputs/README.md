@@ -12,7 +12,7 @@ For each instance, there is a file that contains the optimization parameters in 
 | p´_i | process time to enter all pieces of job i in the first machine [h] | ProcessTimeByJob |
 | p´_ik | process time of a piece of job i in machine k [h] | ProcessTimeByJobAndMachine |
 | s_irk | setup time of job r in machine k, when job i precedes job r [h] | SetupTime |
-| d_ir | minimum delay at the start of job r, when job i precedes job r [h] | MinimumDelay |
+| w_ir | waiting time to start job r, when job i precedes job r [h] | WaitingTime |
 | v_i | total volume of gas used during execution of job i throughout all machines [Nm3/h] | VolumeGasByJob |
 | v_ir | total volume of gas used to setup all machines for job r, when job i precedes job r [Nm3/h] | VolumeGasIdleTime |
 
