@@ -92,7 +92,8 @@ boxplot(Hipervolume~InitialMethod,data=aggdata,
 # H0 -> difference in means of proposed matheuristic and simple MOGVNS hypervolumes is equal to 0
 t.test(Hipervolume~InitialMethod,
        paired=T,
-       data=aggdata)
+       data=aggdata,
+       alternative="less")
 
 # Tukey´s test
 anova.model.hipervolume <- aov(Hipervolume~InitialMethod+Instance, 
