@@ -16,7 +16,7 @@ library(dplyr)    # Transform data frame
 library(tidyr)    # Separate function
 library(multcomp) # Tukey´s test
 library(car)      # Durbin Watson test
-
+library(ggplot2)  # GGplot2 for line chart
 
 # Load experimental data --------------------------------------------------
 
@@ -78,13 +78,14 @@ table.MILP <- data.matheuristic.bestexec[,c("Instance",
                                             "TimeTT_TEC", 
                                             "GapTT_TEC")]
 
-# Boxplot for comparison of proposed matheuristic and simple MOVNS 
-boxplot(Hipervolume~InitialMethod,data=aggdata, 
-        xlab="InitialMethod", ylab="Hypervolume", 
-        cex.lab=0.9, 
-        cex.axis=0.9, 
-        las=1,5)
-
+# Line chart for comparison of proposed matheuristic and simple MOVNS
+line.data <- aggdata %>%
+  separate(Instance, c("InstanceNum", "NumJobs"), "_") %>%
+  separate(InstanceNum, c("Prefix", "Instance"), "instance")
+line.data$Instance <- as.numeric(line.data$Instance)
+line <- ggplot(line.data, aes(x = factor(Instance), y = Hipervolume,
+               group = InitialMethod, colour = InitialMethod)) 
+line + geom_line(linetype=2) + geom_point(size=5) + theme_minimal(base_size = 20) + labs(x = "Instance", y = "Mean Hypervolume") + scale_color_brewer(palette="Set1")
 
 # Statistical Analysis - Proposed Matheuristic vs Simple MOGVNS -----------
 
@@ -182,4 +183,8 @@ boxplot(table.MATHEURISTIC$PI_TEC_MAX,
 # Boxplot for PI_TT_MAX
 boxplot(table.MATHEURISTIC$PI_TT_MAX,
         xlab="PI_TT_MAX", ylab="%")
+
+# Average values for PI
+mean(table.MATHEURISTIC$PI_TEC_MAX)
+median(table.MATHEURISTIC$PI_TT_MAX, na.rm = TRUE)
 
