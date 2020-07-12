@@ -8,6 +8,8 @@ For each instance, there is a file that contains the optimization parameters in 
 
 | Parameter | Description | JSON variable name |
 |-|-|-|
+| m | number of machines | NumberMachines |
+| n | number of jobs | NumberJobs |
 | p_i | total process time of job i throughout all machines [h] | ProcessTimeTotal |
 | p´_i | process time to enter all pieces of job i in the first machine [h] | ProcessTimeByJob |
 | p´_ik | process time of a piece of job i in machine k [h] | ProcessTimeByJobAndMachine |
