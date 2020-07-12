@@ -15,5 +15,6 @@ For each instance, there is a file that contains the optimization parameters in 
 | w_ir | waiting time to start job r, when job i precedes job r [h] | WaitingTime |
 | v_i | total volume of gas used during execution of job i throughout all machines [Nm3/h] | VolumeGasByJob |
 | v_ir | total volume of gas used to setup all machines for job r, when job i precedes job r [Nm3/h] | VolumeGasIdleTime |
+| g | cost of natural gas [$/Nm3] | CostNaturalGas |
 
 Each instance file also contains the parameters grouped by temperature (GroupByTempParameters) and due date (GroupByDateParameters). They are used in the MILP runs to generate the initial solutions.
