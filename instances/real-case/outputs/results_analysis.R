@@ -16,7 +16,8 @@ library(dplyr)    # Transform data frame
 library(tidyr)    # Separate function
 library(multcomp) # Tukey´s test
 library(car)      # Durbin Watson test
-library(ggplot2)  # GGplot2 for line chart
+library(ggplot2)  # GGplot2 for boxplot chart
+library(ggpubr)   # Publication ready plots
 
 # Load experimental data --------------------------------------------------
 
@@ -78,14 +79,18 @@ table.MILP <- data.matheuristic.bestexec[,c("Instance",
                                             "TimeTT_TEC", 
                                             "GapTT_TEC")]
 
-# Line chart for comparison of proposed matheuristic and simple MOVNS
-line.data <- aggdata %>%
+# Boxplot for comparison of proposed matheuristic and simple MOVNS
+boxplot.data <- data %>%
   separate(Instance, c("InstanceNum", "NumJobs"), "_") %>%
   separate(InstanceNum, c("Prefix", "Instance"), "instance")
-line.data$Instance <- as.numeric(line.data$Instance)
-line <- ggplot(line.data, aes(x = factor(Instance), y = Hipervolume,
-               group = InitialMethod, colour = InitialMethod)) 
-line + geom_line(linetype=2) + geom_point(size=5) + theme_minimal(base_size = 20) + labs(x = "Instance", y = "Mean Hypervolume") + scale_color_brewer(palette="Set1")
+boxplot.data$Instance <- as.numeric(boxplot.data$Instance)
+
+ggplot(boxplot.data, aes(x=InitialMethod, y=Hipervolume, fill=InitialMethod)) +
+  geom_boxplot() +
+  facet_wrap(~Instance, scales="free", nrow=3, labeller=label_both) +
+  labs(y="Hypervolume") +
+  theme_bw() +
+  scale_fill_brewer(palette="Set1")
 
 # Statistical Analysis - Proposed Matheuristic vs Simple MOGVNS -----------
 
