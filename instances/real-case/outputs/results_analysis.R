@@ -87,9 +87,13 @@ boxplot.data$Instance <- as.numeric(boxplot.data$Instance)
 
 ggplot(boxplot.data, aes(x=InitialMethod, y=Hipervolume, fill=InitialMethod)) +
   geom_boxplot() +
-  facet_wrap(~Instance, scales="free", nrow=3, labeller=label_both) +
+  facet_wrap(~Instance, scales="free", nrow=4, labeller=label_both) +
   labs(y="Hypervolume") +
   theme_bw() +
+  theme(text=element_text(size=13),
+        axis.title.x=element_blank(),
+        axis.text=element_text(size=11, colour="black"),
+        legend.position="bottom") +
   scale_fill_brewer(palette="Set1")
 
 # Statistical Analysis - Proposed Matheuristic vs Simple MOGVNS -----------
