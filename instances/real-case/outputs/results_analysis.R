@@ -79,6 +79,14 @@ table.MILP <- data.matheuristic.bestexec[,c("Instance",
                                             "TimeTT_TEC", 
                                             "GapTT_TEC")]
 
+# Average values for runtime
+mean(table.MILP$TimeTEC)
+median(table.MILP$TimeTEC)
+mean(table.MILP$TimeTT)
+median(table.MILP$TimeTT)
+mean(table.MILP$TimeTT_TEC)
+median(table.MILP$TimeTT_TEC)
+
 # Boxplot for comparison of proposed matheuristic and simple MOVNS
 boxplot.data <- data %>%
   separate(Instance, c("InstanceNum", "NumJobs"), "_") %>%
